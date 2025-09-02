@@ -48,7 +48,6 @@
     const buttonText = document.getElementById('button-text');
 
     form.addEventListener('submit', () => {
-      // Cambiar botón a estado "ENVIANDO..."
       submitButton.classList.remove('bg-secondary');
       submitButton.classList.add('bg-accent');
       buttonText.textContent = "ENVIANDO...";
@@ -57,16 +56,12 @@
     });
 
     iframe.addEventListener('load', () => {
-      // Restaurar estado del botón
       submitButton.classList.remove('bg-accent');
       submitButton.classList.add('bg-secondary');
       buttonText.textContent = "ENVIAR";
       submitButton.disabled = false;
-
-      // Mensaje genérico de éxito
       status.textContent = "Formulario enviado correctamente.";
       status.style.color = "green";
-
       form.reset();
     });
   </script>
