@@ -4,27 +4,27 @@
     <h2 class="text-primary font-infant text-[64px] text-center w-full">CONFIRMAR ASISTENCIA</h2>
   <form 
     id="contact-form" 
-    class="w-[750px] bg-primary p-10 flex flex-col gap-6 rounded-lg" 
+    class="w-[750px] bg-primary p-10 flex flex-col gap-12 rounded-[32px] font-inter" 
     action="https://script.google.com/macros/s/AKfycbx3p7rEcd6JAiG6wrhlhXTLZOhS4X3aTMMbEctmbMqL5z05Se9c9ijkIgUs3F4u2bxymA/exec" 
     method="POST" 
     target="hidden_iframe"
   >
     <input type="hidden" name="Fecha" value={new Date().toLocaleString('es-ES')}>
-    <div class="flex flex-col gap-2">
+    <div class="flex flex-col gap-4">
         <h3 class="font-infant text-[28px]">Nombre completo *</h3>
         <input type="text" name="Nombre" placeholder="Escribe tu nombre" required class=" border-b-2 border-accent bg-transparent">
     </div>
     <div class="flex flex-col gap-2">
-        <h3 class="font-infant text-[28px]">¿Qué canción no debe faltar?</h3>
-        <input type="text" name="Cancion" placeholder="Escribe una canción" class=" border-b-2 border-accent bg-transparent">
-    </div>
-    <div class="flex flex-col gap-2">
-        <h3 class="font-infant text-[28px]">¿Tienes alguna alergia o intelorancia?</h3>
+        <h3 class="font-infant text-[28px]">¿Tienes alguna alergia o intolerancia?</h3>
         <input type="text" name="Cancion" placeholder="Escribe tus intolerancias" class=" border-b-2 border-accent bg-transparent">
     </div>
     <div class="flex flex-col gap-2">
         <h3 class="font-infant text-[28px]">¿Vienes con acompañante?</h3>
         <input type="text" name="Acompanante" placeholder="Escribe el nombre del acompañante" class=" border-b-2 border-accent bg-transparent">
+    </div>
+    <div class="flex flex-col gap-2">
+        <h3 class="font-infant text-[28px]">¿Qué canción no debe faltar?</h3>
+        <input type="text" name="Cancion" placeholder="Escribe una canción" class=" border-b-2 border-accent bg-transparent">
     </div>
     
     <button 
