@@ -1,0 +1,73 @@
+---
+---
+<section class="bg-secondary text-accent w-full flex flex-col items-center gap-12 justify-center py-20">
+    <h2 class="text-primary font-infant text-[64px] text-center w-full">CONFIRMAR ASISTENCIA</h2>
+  <form 
+    id="contact-form" 
+    class="w-[750px] bg-primary p-10 flex flex-col gap-6 rounded-lg" 
+    action="https://script.google.com/macros/s/AKfycbx3p7rEcd6JAiG6wrhlhXTLZOhS4X3aTMMbEctmbMqL5z05Se9c9ijkIgUs3F4u2bxymA/exec" 
+    method="POST" 
+    target="hidden_iframe"
+  >
+    <input type="hidden" name="Fecha" value={new Date().toLocaleString('es-ES')}>
+    <div class="flex flex-col gap-2">
+        <h3 class="font-infant text-[28px]">Nombre completo *</h3>
+        <input type="text" name="Nombre" placeholder="Escribe tu nombre" required class=" border-b-2 border-accent bg-transparent">
+    </div>
+    <div class="flex flex-col gap-2">
+        <h3 class="font-infant text-[28px]">¿Qué canción no debe faltar?</h3>
+        <input type="text" name="Cancion" placeholder="Escribe una canción" class=" border-b-2 border-accent bg-transparent">
+    </div>
+    <div class="flex flex-col gap-2">
+        <h3 class="font-infant text-[28px]">¿Tienes alguna alergia o intelorancia?</h3>
+        <input type="text" name="Cancion" placeholder="Escribe tus intolerancias" class=" border-b-2 border-accent bg-transparent">
+    </div>
+    <div class="flex flex-col gap-2">
+        <h3 class="font-infant text-[28px]">¿Vienes con acompañante?</h3>
+        <input type="text" name="Acompanante" placeholder="Escribe el nombre del acompañante" class=" border-b-2 border-accent bg-transparent">
+    </div>
+    
+    <button 
+      type="submit" 
+      id="submit-button"
+      class="bg-secondary text-primary px-6 mt-6 py-3 rounded-full font-semibold hover:opacity-80 transition-colors duration-200"
+    >
+      <span id="button-text">ENVIAR</span>
+    </button>
+
+    <p id="form-status" class="text-sm mt-2"></p>
+  </form>
+
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+  <script type="module">
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('form-status');
+    const iframe = document.getElementById('hidden_iframe');
+    const submitButton = document.getElementById('submit-button');
+    const buttonText = document.getElementById('button-text');
+
+    form.addEventListener('submit', () => {
+      // Cambiar botón a estado "ENVIANDO..."
+      submitButton.classList.remove('bg-secondary');
+      submitButton.classList.add('bg-accent');
+      buttonText.textContent = "ENVIANDO...";
+      submitButton.disabled = true;
+      status.textContent = "";
+    });
+
+    iframe.addEventListener('load', () => {
+      // Restaurar estado del botón
+      submitButton.classList.remove('bg-accent');
+      submitButton.classList.add('bg-secondary');
+      buttonText.textContent = "ENVIAR";
+      submitButton.disabled = false;
+
+      // Mensaje genérico de éxito
+      status.textContent = "Formulario enviado correctamente.";
+      status.style.color = "green";
+
+      form.reset();
+    });
+  </script>
+</section>
