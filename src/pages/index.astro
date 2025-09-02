@@ -1,11 +1,18 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import Header from '../components/Header.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+	<Header />
+	<section class="w-full flex justify-center items-center">
+		<img src="./images/DSC_8287.webp" alt="Imagen de Cris y Jose" class="w-[75%] aspect-[16/9] object-cover" />
+	</section>
+	<section class="w-full py-24 font-inter font-light tracking-tighter text-center items-center flex flex-col gap-10 justify-center">
+		<p class="text-[64px] font-infant font-normal max-w-[1150px] leading-none text-center">Después de muchos años de amor, complicidad y mil aventuras compartidas...</p>
+		<p class="text-[32px] max-w-[800px] text-center">Nos hace especial ilusión invitaros a formar parte de uno de los días más mágicos de nuestra vida.</p>
+	</section>
+	<section class="w-full flex justify-center items-center py-24">
+		<img src="./images/DSC_7670.webp" alt="Imagen de Cris y Jose" class="rotate-12 border-[24px] border-white w-[30%] aspect-[9/13] object-cover" />
+	</section>
 </Layout>
