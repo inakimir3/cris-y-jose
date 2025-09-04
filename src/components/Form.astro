@@ -16,7 +16,7 @@
         <input type="text" name="Nombre" placeholder="Escribe tu nombre" required class=" border-b-2 border-accent bg-transparent">
     </div>
     <div class="flex flex-col gap-2">
-        <h3 class="font-infant text-[20px] lg:text-[28px]">¿Tienes alguna alergia o intolerancia?</h3>
+        <h3 class="font-infant text-[20px] lg:text-[28px]">Restricciones alimenticias o alergias</h3>
         <input type="text" name="Intolerancias" placeholder="Escribe tus intolerancias" class=" border-b-2 border-accent bg-transparent">
     </div>
     <div class="flex flex-col gap-2">
@@ -28,15 +28,16 @@
         <input type="text" name="Cancion" placeholder="Escribe una canción" class=" border-b-2 border-accent bg-transparent">
     </div>
     
+    
     <button 
       type="submit" 
       id="submit-button"
       class="bg-secondary text-primary px-6 mt-6 py-3 rounded-full font-semibold hover:opacity-80 transition-colors duration-200"
-    >
-      <span id="button-text">ENVIAR</span>
+      >
+      <span id="button-text">CONFIRMAR ASISTENCIA</span>
     </button>
-
-    <p id="form-status" class="text-sm mt-2"></p>
+  
+    <p id="form-status" class="font-infant text-[24px] w-full text-center mt-2"></p>
   </form>
 
   <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
@@ -62,9 +63,9 @@
     iframe.addEventListener('load', () => {
       submitButton.classList.remove('bg-accent');
       submitButton.classList.add('bg-secondary');
-      buttonText.textContent = "ENVIAR";
+      buttonText.textContent = "CONFIRMAR ASISTENCIA";
       submitButton.disabled = false;
-      status.textContent = "Formulario enviado correctamente.";
+      status.textContent = "¡Confirmación recibida!.";
       status.style.color = "green";
       form.reset();
     });
