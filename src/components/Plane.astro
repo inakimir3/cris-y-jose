@@ -1,0 +1,29 @@
+---
+---
+
+<script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+
+<style>
+  @keyframes fly {
+    0% {
+      transform: translateX(-30dvw); /* Sale desde fuera de la izquierda */
+    }
+    100% {
+      transform: translateX(100dvw); /* Se va por la derecha */
+    }
+  }
+
+  .plane {
+    animation: fly 8s ease-in infinite; /* Cambia duración y tipo de animación aquí */
+  }
+</style>
+
+<div class="plane">
+  <dotlottie-wc 
+    src="https://lottie.host/a37973a8-2a72-4d3d-a94a-d59b76929827/76F8OPsmiS.lottie" 
+    style="width: 300px; height: 300px;" 
+    speed="1" 
+    autoplay 
+    loop>
+  </dotlottie-wc>
+</div>
